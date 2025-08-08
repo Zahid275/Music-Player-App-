@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:music_player/constants/textstyles.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 import '../Models/song.dart';
@@ -56,7 +57,7 @@ class SongTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(song.title, overflow: TextOverflow.ellipsis),
+                    Text(song.title, overflow: TextOverflow.ellipsis,style: tileTextStyle(),),
                     Text("${song.artist}"),
                   ],
                 ),

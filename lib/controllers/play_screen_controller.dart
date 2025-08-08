@@ -60,8 +60,6 @@ class PlayScreenController extends GetxController {
       playingIndex.value = playingIndex.value - 1;
       currentSong.value =
       isHome ? songs[playingIndex.value] : favSongs[playingIndex.value];
-
-      update();
       audioPlayer.seekToPrevious().then((_) {
         audioPlayer.play();
       });

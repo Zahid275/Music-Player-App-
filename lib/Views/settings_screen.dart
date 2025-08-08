@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:music_player/constants/colors.dart';
 import 'package:music_player/constants/textstyles.dart';
 import 'package:music_player/controllers/themeController.dart';
-import 'package:music_player/widgets/my_drawer.dart';
+import 'package:music_player/widgets/threedotMenu.dart';
 
 class SettingsScreen extends StatelessWidget {
   SettingsScreen({super.key});
@@ -16,10 +16,14 @@ class SettingsScreen extends StatelessWidget {
     return Obx(() {
       bool isLight = themeController.isLight.value;
       return Scaffold(
-          drawer: MyDrawer(isLight: isLight,drawerColor: AppColors.primaryColor(isLight)),
 
       backgroundColor: AppColors.backgroundColor(isLight),
-        appBar: AppBar(backgroundColor: AppColors.backgroundColor(isLight)),
+        appBar: AppBar(backgroundColor: AppColors.backgroundColor(isLight),
+        automaticallyImplyLeading: false,
+        leading:      ThreeDotMenu(
+          theme: isLight,
+          color: AppColors.primaryColor(isLight),
+        )),
         body: Column(
           children: [
             SizedBox(height: 30.sp),

@@ -6,9 +6,7 @@ import 'package:music_player/constants/colors.dart';
 import 'package:music_player/constants/textstyles.dart';
 import 'package:music_player/controllers/home_controller.dart';
 import 'package:music_player/controllers/play_screen_controller.dart';
-import 'package:music_player/widgets/my_drawer.dart';
-
-
+import 'package:music_player/widgets/threedotMenu.dart';
 import '../controllers/themeController.dart';
 import '../services/db_services.dart';
 
@@ -17,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   final playController = Get.find<PlayScreenController>();
   final themeController = Get.find<ThemeController>();
 
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,39 +24,42 @@ class HomeScreen extends StatelessWidget {
       bool isLight = themeController.isLight.value;
 
       return DefaultTabController(
-
         initialIndex: 0,
         length: 2,
         child: Scaffold(
-          drawer: MyDrawer(
-            isLight: isLight,
-            drawerColor: AppColors.primaryColor(isLight),
-          ),
-          backgroundColor: AppColors.backgroundColor(isLight),
-          appBar: AppBar(
-            title: Text("Melodia",style: primaryTextStyle(size: 23),),
-            bottom: TabBar(
-              indicatorColor: AppColors.btnColor(isLight),
-              labelColor: AppColors.btnColor2(isLight),
-              unselectedLabelColor: AppColors.darkShadow(!isLight),
-              tabs: [
-                Tab(icon: Icon(FontAwesomeIcons.house), text: "Home"),
-                Tab(
-                  icon: Icon(FontAwesomeIcons.solidHeart),
-                  text: "Favourites",
-                ),
-              ],
-            ),
             backgroundColor: AppColors.backgroundColor(isLight),
-          ),
+            appBar: AppBar(
+                automaticallyImplyLeading: false,
+                leading: ThreeDotMenu(
+                  theme: isLight,
+                  color: AppColors.tabIconColor(isLight),
+                ) ,
+                iconTheme: IconThemeData(color: AppColors.tabIconColor(
+                isLight)),
 
-          body: TabBarView(
-            children: [
-              homeTab(controller, isLight),
-              favTab(playController.favSongs,isLight),
-            ],
-          ),
+        title: Text("Melodia", style: appBarTextStyle(isLight)),
+        bottom: TabBar(
+          indicatorColor: AppColors.btnColor(isLight),
+          labelColor: AppColors.tabIconColor(isLight),
+          unselectedLabelColor: AppColors.darkShadow(!isLight),
+          tabs: [
+            Tab(icon: Icon(FontAwesomeIcons.house), text: "Home"),
+            Tab(
+              icon: Icon(FontAwesomeIcons.solidHeart),
+              text: "Favourites",
+            ),
+          ],
         ),
+        backgroundColor: AppColors.btnColor2(isLight),
+      ),
+
+      body: TabBarView(
+      children: [
+      homeTab(controller, isLight),
+      favTab(playController.favSongs, isLight),
+      ],
+      ),
+      ),
       );
     });
   }

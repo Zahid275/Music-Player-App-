@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_player/constants/colors.dart';
-import 'package:music_player/widgets/my_drawer.dart';
+import 'package:music_player/widgets/threedotMenu.dart';
 
 import '../constants/textstyles.dart';
 import '../controllers/themeController.dart';
@@ -17,11 +17,13 @@ class AboutScreen extends StatelessWidget {
       bool isLight = themeController.isLight.value;
 
       return Scaffold(
-        drawer: MyDrawer(
-          isLight: isLight,
-          drawerColor: AppColors.primaryColor(isLight),
-        ),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+
+          leading:      ThreeDotMenu(
+            theme: isLight,
+            color: AppColors.primaryColor(isLight),
+          ),
           title: const Text('🎵 About Melodia'),
           centerTitle: true,
         ),

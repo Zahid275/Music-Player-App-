@@ -47,10 +47,8 @@ class _PlayScreenState extends State<PlayScreen> {
       bool isLight = themeController.isLight.value;
 
       return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.backgroundColor(isLight),
-          title: Text("Play Screen", style: TextStyle(fontSize: 20.sp)),
-        ),
+appBar: AppBar(        backgroundColor: AppColors.backgroundColor(isLight),
+),
         backgroundColor: AppColors.backgroundColor(isLight),
         body: SingleChildScrollView(
           child: Column(

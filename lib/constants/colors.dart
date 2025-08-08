@@ -24,4 +24,7 @@ class AppColors {
 
   static Color btnColor2(bool isLight) =>
       isLight ? Colors.blue.shade300 : Colors.deepOrange;
+
+  static Color tabIconColor(bool isLight) =>
+      isLight ? Colors.blue.shade50 : Colors.orange.shade300;
 }
