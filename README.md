@@ -36,7 +36,7 @@ It provides smooth and modern functionality for music lovers with a clean UI/UX.
 
 | Settings | About Screen |
 |----------|--------------|
-| ![Settings](screenshots/settings.jpg) | ![About Screen](screenshots/about_screen.jpg) |
+| ![Settings](screenshots/settings.jpg) | ![About Screen](screenshots/About Screen.jpg) |
 
 ---
 
