@@ -32,17 +32,17 @@ It provides smooth and modern functionality for music lovers with a clean UI/UX.
 ### 🌞 Light Mode  
 | Home | Favorites | Play Screen | Menu |
 |------|-----------|-------------|------|
-| ![Home](screenshots/home.png) | ![Favorites](screenshots/favourites.png) | ![Play Screen](screenshots/play_screen.png) | ![Menu](screenshots/menu.png) |
+| ![Home](screenshots/home.jpg) | ![Favorites](screenshots/favourites.jpg) | ![Play Screen](screenshots/play_screen.jpg) | ![Menu](screenshots/menu.jpg) |
 
 | Settings | About Screen |
 |----------|--------------|
-| ![Settings](screenshots/settings.png) | ![About Screen](screenshots/about_screen.png) |
+| ![Settings](screenshots/settings.jpg) | ![About Screen](screenshots/about_screen.jpg) |
 
 ---
 
 ### 🌙 Dark Mode  
 | Home (Dark) | Play Screen (Dark) |
 |-------------|--------------------|
-| ![Home Dark](screenshots/home_dark.png) | ![Play Screen Dark](screenshots/play_screen_darkmode.png) |
+| ![Home Dark](screenshots/home_dark.jpg) | ![Play Screen Dark](screenshots/play_screen_darkmode.jpg) |
 
 ---
